@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modul1_GudangOOP", "module_1_gudangoop\Modul1_GudangOOP.csproj", "{6C3B0C62-3875-48BA-A130-40474D8B50BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C3B0C62-3875-48BA-A130-40474D8B50BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3B0C62-3875-48BA-A130-40474D8B50BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3B0C62-3875-48BA-A130-40474D8B50BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3B0C62-3875-48BA-A130-40474D8B50BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D8C9C8C-F275-4247-942F-7F26E5EE216A}
+	EndGlobalSection
+EndGlobal

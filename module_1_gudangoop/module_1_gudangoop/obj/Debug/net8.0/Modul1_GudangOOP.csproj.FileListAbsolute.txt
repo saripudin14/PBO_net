@@ -1,0 +1,14 @@
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\bin\Debug\net8.0\Modul1_GudangOOP.exe
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\bin\Debug\net8.0\Modul1_GudangOOP.deps.json
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\bin\Debug\net8.0\Modul1_GudangOOP.runtimeconfig.json
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\bin\Debug\net8.0\Modul1_GudangOOP.dll
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\bin\Debug\net8.0\Modul1_GudangOOP.pdb
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\obj\Debug\net8.0\Modul1_GudangOOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\obj\Debug\net8.0\Modul1_GudangOOP.AssemblyInfoInputs.cache
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\obj\Debug\net8.0\Modul1_GudangOOP.AssemblyInfo.cs
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\obj\Debug\net8.0\Modul1_GudangOOP.csproj.CoreCompileInputs.cache
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\obj\Debug\net8.0\Modul1_GudangOOP.dll
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\obj\Debug\net8.0\refint\Modul1_GudangOOP.dll
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\obj\Debug\net8.0\Modul1_GudangOOP.pdb
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\obj\Debug\net8.0\Modul1_GudangOOP.genruntimeconfig.cache
+C:\Users\Saripudin\source\repos\module_1_gudangoop\module_1_gudangoop\obj\Debug\net8.0\ref\Modul1_GudangOOP.dll
