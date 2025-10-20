@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Modul1_GudangOOP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94221aa1c51f94ce4824f6c804ba06292ea90d51")]
 [assembly: System.Reflection.AssemblyProductAttribute("Modul1_GudangOOP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Modul1_GudangOOP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
