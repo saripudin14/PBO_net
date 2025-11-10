@@ -1,33 +1,35 @@
 ﻿using System;
 
-namespace Modul3_GudangOOP.Models
+namespace module_3_gudangoop.Models
 {
     public class Barang
     {
-        public string KodeBarang;
-
+        private string kodeBarang;
         private string namaBarang;
+        private int jumlahStok;
+        private string kategori;
+
+        public Barang(string kode, string nama, int stok, string kategori)
+        {
+            KodeBarang = kode;
+            NamaBarang = nama;
+            JumlahStok = stok; // Akan memicu validasi
+            Kategori = kategori;
+        }
+
+        public Barang() { } // Konstruktor default
+
+        public string KodeBarang
+        {
+            get => kodeBarang;
+            set => kodeBarang = value;
+        }
 
         public string NamaBarang
         {
             get => namaBarang;
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("Nama barang tidak boleh kosong.");
-                }
-
-                if (value.Length > 15)
-                {
-                    throw new ArgumentException("Nama barang tidak boleh lebih dari 15 karakter.");
-                }
-
-                namaBarang = value;
-            }
+            set => namaBarang = value;
         }
-
-        private int jumlahStok;
 
         public int JumlahStok
         {
@@ -35,36 +37,20 @@ namespace Modul3_GudangOOP.Models
             set
             {
                 if (value < 0)
-                {
-                    throw new ArgumentException("Jumlah stok tidak boleh negatif.");
-                }
+                    throw new StokNegatifException("Jumlah stok tidak boleh negatif.");
                 jumlahStok = value;
             }
         }
 
-        public string Kategori { get; set; }
-
-        public string Status => JumlahStok > 50 ? "Aman" : "Perlu Reorder";
-
-        public Barang(string kode, string nama, int stok, string kategori)
+        public string Kategori
         {
-            KodeBarang = kode;
-            this.NamaBarang = nama;
-            this.JumlahStok = stok;
-            this.Kategori = kategori;
-        }
-
-        public Barang()
-        {
-            KodeBarang = "Unknown";
-            this.NamaBarang = "Unknown";
-            this.JumlahStok = 0;
-            this.Kategori = "Umum";
+            get => kategori;
+            set => kategori = value;
         }
 
         public virtual void TampilkanInfo()
         {
-            Console.WriteLine($"[{KodeBarang}] {NamaBarang} - Stok: {JumlahStok}, Kategori: {Kategori}");
+            Console.WriteLine($"Kode: {KodeBarang}, Nama: {NamaBarang}, Stok: {JumlahStok}, Kategori: {Kategori}");
         }
     }
 }

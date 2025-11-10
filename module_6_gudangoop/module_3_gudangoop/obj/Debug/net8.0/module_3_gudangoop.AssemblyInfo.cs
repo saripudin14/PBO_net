@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("module_3_gudangoop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf8c4672f5646bf31025115ba920e9d43ab844a2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f905e87046482439300bc4969600e3823b9a6bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("module_3_gudangoop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("module_3_gudangoop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

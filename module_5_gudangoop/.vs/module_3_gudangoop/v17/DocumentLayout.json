@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Saripudin\\source\\repos\\PBO_net\\module_5_gudangoop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4B26739F-9B0B-4D7B-9B52-D9F13E8E0012}|module_3_gudangoop\\module_3_gudangoop.csproj|c:\\users\\saripudin\\source\\repos\\pbo_net\\module_5_gudangoop\\module_3_gudangoop\\models\\barangkimia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B26739F-9B0B-4D7B-9B52-D9F13E8E0012}|module_3_gudangoop\\module_3_gudangoop.csproj|solutionrelative:module_3_gudangoop\\models\\barangkimia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4B26739F-9B0B-4D7B-9B52-D9F13E8E0012}|module_3_gudangoop\\module_3_gudangoop.csproj|c:\\users\\saripudin\\source\\repos\\pbo_net\\module_5_gudangoop\\module_3_gudangoop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4B26739F-9B0B-4D7B-9B52-D9F13E8E0012}|module_3_gudangoop\\module_3_gudangoop.csproj|solutionrelative:module_3_gudangoop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B26739F-9B0B-4D7B-9B52-D9F13E8E0012}|module_3_gudangoop\\module_3_gudangoop.csproj|c:\\users\\saripudin\\source\\repos\\pbo_net\\module_5_gudangoop\\module_3_gudangoop\\models\\barangkimia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B26739F-9B0B-4D7B-9B52-D9F13E8E0012}|module_3_gudangoop\\module_3_gudangoop.csproj|solutionrelative:module_3_gudangoop\\models\\barangkimia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4B26739F-9B0B-4D7B-9B52-D9F13E8E0012}|module_3_gudangoop\\module_3_gudangoop.csproj|c:\\users\\saripudin\\source\\repos\\pbo_net\\module_5_gudangoop\\module_3_gudangoop\\models\\barangmakanan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -42,8 +42,7 @@
               "RelativeToolTip": "module_3_gudangoop\\Models\\BarangElektronik.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T02:48:07.599Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-10T02:48:07.599Z"
             },
             {
               "$type": "Document",
@@ -55,12 +54,11 @@
               "RelativeToolTip": "module_3_gudangoop\\Models\\Barang.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T02:47:59.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-10T02:47:59.529Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BarangKimia.cs",
               "DocumentMoniker": "C:\\Users\\Saripudin\\source\\repos\\PBO_net\\module_5_gudangoop\\module_3_gudangoop\\Models\\BarangKimia.cs",
               "RelativeDocumentMoniker": "module_3_gudangoop\\Models\\BarangKimia.cs",
@@ -68,8 +66,7 @@
               "RelativeToolTip": "module_3_gudangoop\\Models\\BarangKimia.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T02:41:01.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-10T02:41:01.518Z"
             },
             {
               "$type": "Document",
@@ -81,18 +78,17 @@
               "RelativeToolTip": "module_3_gudangoop\\Models\\BarangMakanan.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-10T02:40:45.585Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-10T02:40:45.585Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Saripudin\\source\\repos\\PBO_net\\module_5_gudangoop\\module_3_gudangoop\\Program.cs",
               "RelativeDocumentMoniker": "module_3_gudangoop\\Program.cs",
               "ToolTip": "C:\\Users\\Saripudin\\source\\repos\\PBO_net\\module_5_gudangoop\\module_3_gudangoop\\Program.cs",
               "RelativeToolTip": "module_3_gudangoop\\Program.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA1wAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-10T02:14:42.795Z",
               "EditorCaption": ""

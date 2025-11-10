@@ -1,0 +1,5 @@
+Kode	Nama	Stok	Kategori
+B001	Laptop	30	Elektronik
+B002	Smartphone	60	Elektronik
+B003	Kulkas	20	Elektronik
+Ob001	obat	90	medikal
