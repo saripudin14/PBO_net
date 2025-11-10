@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "module_3_gudangoop/1.0.0": {
+        "runtime": {
+          "module_3_gudangoop.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "module_3_gudangoop/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

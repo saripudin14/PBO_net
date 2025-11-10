@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Saripudin\\source\\repos\\PBO_net\\module_3_gudangoop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B26739F-9B0B-4D7B-9B52-D9F13E8E0012}|module_3_gudangoop\\module_3_gudangoop.csproj|c:\\users\\saripudin\\source\\repos\\pbo_net\\module_3_gudangoop\\module_3_gudangoop\\models\\barang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B26739F-9B0B-4D7B-9B52-D9F13E8E0012}|module_3_gudangoop\\module_3_gudangoop.csproj|solutionrelative:module_3_gudangoop\\models\\barang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Barang.cs",
+              "DocumentMoniker": "C:\\Users\\Saripudin\\source\\repos\\PBO_net\\module_3_gudangoop\\module_3_gudangoop\\Models\\Barang.cs",
+              "RelativeDocumentMoniker": "module_3_gudangoop\\Models\\Barang.cs",
+              "ToolTip": "C:\\Users\\Saripudin\\source\\repos\\PBO_net\\module_3_gudangoop\\module_3_gudangoop\\Models\\Barang.cs",
+              "RelativeToolTip": "module_3_gudangoop\\Models\\Barang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T01:35:23.579Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
