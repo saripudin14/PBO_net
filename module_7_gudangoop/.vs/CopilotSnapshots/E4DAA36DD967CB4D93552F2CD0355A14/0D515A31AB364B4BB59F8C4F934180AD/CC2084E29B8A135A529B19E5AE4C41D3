@@ -1,0 +1,26 @@
+﻿using System;
+using module_3_gudangoop.Models; // Pastikan namespace ini benar untuk kelas Barang
+using IBarangPrinterAlias = module_3_gudangoop.Interfaces.IBarangPrinter; // Alias untuk menghilangkan ambiguitas
+
+namespace module_3_gudangoop.Services
+{
+    // Sesuaikan dengan modul 7: Implementasikan interface IBarangPrinter
+    public class PencetakBarang : IBarangPrinterAlias
+    {
+        // Implementasikan method dari interface
+        public void Cetak(Barang barang)
+        {
+            if (barang == null)
+            {
+                Console.WriteLine("Barang tidak ditemukan untuk dicetak.");
+                return;
+            }
+            Console.WriteLine("==== INFORMASI BARANG ====");
+            Console.WriteLine($"Kode    : {barang.KodeBarang}");
+            Console.WriteLine($"Nama    : {barang.NamaBarang}");
+            Console.WriteLine($"Stok    : {barang.JumlahStok}");
+            Console.WriteLine($"Kategori: {barang.Kategori}");
+            Console.WriteLine("==========================");
+        }
+    }
+}

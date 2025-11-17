@@ -1,0 +1,44 @@
+﻿using module_3_gudangoop.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        ItemGudang item1 = new BarangKimia("KIM001", "Asam Sulfat");
+        ItemGudang item2 = new BarangMakanan("MAK001", "Susu Kental", DateTime.Parse("2023-12-01"));
+
+        item1.CetakInfo();
+        Console.WriteLine(item1.EvaluasiResiko());
+        item2.CetakInfo();
+        Console.WriteLine(item2.EvaluasiResiko());
+
+        if (item2 is IPeriksaKadaluarsa periksa)
+        {
+            Console.WriteLine(periksa.ApakahKadaluarsa() ? "Kadaluarsa" : "Masih berlaku");
+        }
+
+        List<ItemGudang> daftarItem = new List<ItemGudang> { item1, item2 };
+        var hasilCari = daftarItem.Find(i => i.Kode == "KIM001");
+        if (hasilCari != null)
+        {
+            Console.WriteLine("Ditemukan:"); hasilCari.CetakInfo();
+        }
+
+        Dictionary<string, ItemGudang> indeks = new Dictionary<string, ItemGudang>();
+        foreach (var item in daftarItem) { if (!indeks.ContainsKey(item.Kode)) indeks[item.Kode] = item; }
+        if (indeks.ContainsKey("MAK001"))
+        {
+            Console.WriteLine("Dari Dict:"); indeks["MAK001"].CetakInfo();
+        }
+
+        var hasilGeneric = CariData(daftarItem, i => i.Kode == "KIM001");
+        var pertama = AmbilPertama(daftarItem);
+    }
+
+    // Use LINQ FirstOrDefault to accept a Func<T,bool> predicate
+    public static T CariData<T>(List<T> list, Func<T, bool> predicate) => list.FirstOrDefault(predicate);
+    public static T AmbilPertama<T>(List<T> list) => list.Count > 0 ? list[0] : default(T);
+}

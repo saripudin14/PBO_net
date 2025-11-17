@@ -1,0 +1,99 @@
+﻿using module_3_gudangoop.Models; // Sesuaikan namespace dengan proyek Anda
+using module_3_gudangoop.Services; // Untuk PencetakBarang
+using module_3_gudangoop.Interfaces; // Untuk IBarangPrinter
+using module_3_gudangoop.Helpers; // Untuk InputHelper
+using module_3_gudangoop.Factories; // Untuk BarangFactory
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("--- IMPLEMENTASI MODUL 7: SOLID & Factory Pattern ---");
+        Console.WriteLine("===================================================\n");
+
+        // --- Bagian dari Modul 6 (daftar barang awal) ---
+        List<Barang> daftarBarang = new List<Barang>
+        {
+            new Barang("B001", "Laptop", 30, "Elektronik"),
+            new Barang("B002", "Smartphone", 60, "Elektronik"),
+            new Barang("B003", "Kulkas", 20, "Elektronik")
+        };
+
+        // --- Langkah 3 Modul 7: Refactoring - Gunakan InputHelper ---
+        Console.WriteLine("--- Tambah Barang Baru (Refactored Input) ---");
+        try
+        {
+            Barang bInput = InputHelper.AmbilInputBarang(); // Gunakan helper
+            daftarBarang.Add(bInput);
+            Console.WriteLine("Barang berhasil ditambahkan ke daftar.");
+        }
+        catch (StokNegatifException ex) // Tangkap exception dari konstruktor Barang
+        {
+            Console.WriteLine($"ERROR: {ex.Message}");
+        }
+        catch (Exception ex) // Tangkap error lainnya
+        {
+            Console.WriteLine($"ERROR input: {ex.Message}");
+        }
+
+        // --- Langkah 2 & 3 Modul 7: Gunakan IBarangPrinter (dengan PencetakBarang) ---
+        Console.WriteLine("\n--- Cetak Info Barang Baru (via Interface) ---");
+        IBarangPrinter pencetak = new PencetakBarang(); // Gunakan interface
+        // Cetak barang terakhir yang ditambahkan
+        pencetak.Cetak(daftarBarang.LastOrDefault());
+
+        // --- Langkah 2 Modul 7: Gunakan Factory Pattern ---
+        Console.WriteLine("\n--- Buat Barang Baru via Factory ---");
+        Barang barangDariFactory = BarangFactory.BuatBarang("Makanan"); // Gunakan factory
+        daftarBarang.Add(barangDariFactory);
+        Console.WriteLine("Barang dari factory berhasil ditambahkan.");
+
+        // Cetak barang dari factory
+        pencetak.Cetak(barangDariFactory);
+
+        // --- Bagian dari Modul 6 (File I/O) ---
+        Console.WriteLine("\n--- Simpan ke File (Modul 6) ---");
+        string path = Path.Combine(Directory.GetCurrentDirectory(), "data_barang_modul7.txt");
+
+        try
+        {
+            File.WriteAllText(path, "Kode\tNama\tStok\tKategori\n");
+            foreach (var barang in daftarBarang)
+            {
+                File.AppendAllText(path, $"{barang.KodeBarang}\t{barang.NamaBarang}\t{barang.JumlahStok}\t{barang.Kategori}\n");
+            }
+            Console.WriteLine($"Data disimpan di: {path}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Gagal simpan: {ex.Message}");
+        }
+
+        Console.WriteLine("\n--- Baca dari File (Modul 6) ---");
+        if (File.Exists(path)) // Gunakan path yang sama untuk konsistensi
+        {
+            try
+            {
+                var isi = File.ReadAllLines(path);
+                foreach (var baris in isi)
+                {
+                    Console.WriteLine(baris);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Gagal baca: {ex.Message}");
+            }
+        }
+        else
+        {
+            Console.WriteLine($"File {path} tidak ditemukan.");
+        }
+
+        Console.WriteLine("\n--- Selesai ---");
+    }
+}

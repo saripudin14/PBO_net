@@ -1,0 +1,6 @@
+Kode	Nama	Stok	Kategori
+B001	Laptop	30	Elektronik
+B002	Smartphone	60	Elektronik
+B003	Kulkas	20	Elektronik
+009	Kopi Aceh	70	Minuman
+MAK001	Susu	50	Minuman

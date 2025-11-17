@@ -1,0 +1,26 @@
+﻿using System;
+using module_3_gudangoop.Models; // Pastikan namespace i
+using module_3_gudangoop.Interfaces; // gunakan interface dari Interfaces
+
+namespace module_3_gudangoop.Services
+{
+    // Implementasikan interface IBarangPrinter dari namespace Interfaces
+    public class PencetakBarang : IBarangPrinter
+    {
+        // Implementasikan method dari interface
+        public void Cetak(Barang barang)
+        {
+            if (barang == null)
+            {
+                Console.WriteLine("Barang tidak ditemukan untuk dicetak.");
+                return;
+            }
+            Console.WriteLine("==== INFORMASI BARANG ====");
+            Console.WriteLine($"Kode    : {barang.KodeBarang}");
+            Console.WriteLine($"Nama    : {barang.NamaBarang}");
+            Console.WriteLine($"Stok    : {barang.JumlahStok}");
+            Console.WriteLine($"Kategori: {barang.Kategori}");
+            Console.WriteLine("==========================");
+        }
+    }
+}

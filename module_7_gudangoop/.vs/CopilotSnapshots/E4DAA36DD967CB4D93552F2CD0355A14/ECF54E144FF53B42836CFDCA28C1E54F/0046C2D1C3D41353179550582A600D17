@@ -1,0 +1,70 @@
+﻿using module_3_gudangoop.Models; // Sesuaikan namespace dengan proyek Anda
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("--- Modul 6: Exception Handling & File I/O ---");
+
+        List<Barang> daftarBarang = new List<Barang>
+        {
+            new Barang("B001", "Laptop", 30, "Elektronik"),
+            new Barang("B002", "Smartphone", 60, "Elektronik"),
+            new Barang("B003", "Kulkas", 20, "Elektronik")
+        };
+
+        // Langkah 1: Try-Catch pada Input
+        Console.WriteLine("\n--- Langkah 1: Try-Catch Input ---");
+        Barang bInput = new Barang();
+        Console.Write("Nama: "); bInput.NamaBarang = Console.ReadLine() ?? string.Empty;
+        Console.Write("Kode: "); bInput.KodeBarang = Console.ReadLine() ?? string.Empty;
+
+        int stokInput = 0;
+        while (true)
+        {
+            try
+            {
+                Console.Write("Stok: "); stokInput = int.Parse(Console.ReadLine() ?? "0");
+                break;
+            }
+            catch (FormatException) { Console.WriteLine("Input harus angka!"); }
+        }
+
+        try { bInput.JumlahStok = stokInput; } // Bisa lempar StokNegatifException
+        catch (StokNegatifException ex) { Console.WriteLine($"ERROR: {ex.Message}"); }
+
+        Console.Write("Kategori: "); bInput.Kategori = Console.ReadLine() ?? string.Empty;
+        daftarBarang.Add(bInput);
+
+        // Langkah 3: Simpan ke File
+        Console.WriteLine("\n--- Langkah 3: Simpan ke File ---");
+        string path = Path.Combine(Directory.GetCurrentDirectory(), "data_barang.txt");
+        try
+        {
+            File.WriteAllText(path, "Kode\tNama\tStok\tKategori\n");
+            foreach (var barang in daftarBarang)
+            {
+                File.AppendAllText(path, $"{barang.KodeBarang}\t{barang.NamaBarang}\t{barang.JumlahStok}\t{barang.Kategori}\n");
+            }
+            Console.WriteLine($"Data disimpan di: {path}");
+        }
+        catch (Exception ex) { Console.WriteLine($"Gagal simpan: {ex.Message}"); }
+
+        // Langkah 4: Baca dari File
+        Console.WriteLine("\n--- Langkah 4: Baca dari File ---");
+        if (File.Exists(path))
+        {
+            try
+            {
+                var isi = File.ReadAllLines(path);
+                foreach (var baris in isi) { Console.WriteLine(baris); }
+            }
+            catch (Exception ex) { Console.WriteLine($"Gagal baca: {ex.Message}"); }
+        }
+        else { Console.WriteLine("File tidak ditemukan."); }
+    }
+}
