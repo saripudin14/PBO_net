@@ -1,0 +1,155 @@
+﻿using module_3_gudangoop.Models;
+using module_3_gudangoop.Services;
+using module_3_gudangoop.Interfaces;
+using module_3_gudangoop.Helpers;
+using module_3_gudangoop.Factories;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string path = Path.Combine(Directory.GetCurrentDirectory(), "data_barang_modul7.txt");
+
+        // 1) Baca file lama (jika ada) dan parse ke daftarBarang
+        List<Barang> daftarBarang = new List<Barang>();
+        if (File.Exists(path))
+        {
+            try
+            {
+                var lines = File.ReadAllLines(path);
+                int start = 0;
+                if (lines.Length > 0 && lines[0].StartsWith("Kode", StringComparison.OrdinalIgnoreCase)) start = 1;
+                for (int i = start; i < lines.Length; i++)
+                {
+                    var line = lines[i];
+                    if (string.IsNullOrWhiteSpace(line)) continue;
+                    var parts = line.Split('\t');
+                    if (parts.Length < 4) continue;
+                    var kode = parts[0];
+                    var nama = parts[1];
+                    if (!int.TryParse(parts[2], out int stok)) stok = 0;
+                    var kategori = parts[3];
+                    if (!daftarBarang.Any(b => b.KodeBarang == kode))
+                    {
+                        daftarBarang.Add(new Barang(kode, nama, stok, kategori));
+                    }
+                }
+                Console.WriteLine($"Membaca {daftarBarang.Count} barang dari file: {path}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Gagal membaca file: {ex.Message}");
+            }
+        }
+
+        // 2) Pastikan daftar default ada (tanpa duplikasi)
+        var defaultItems = new[]
+        {
+            new Barang("B001", "Laptop", 30, "Elektronik"),
+            new Barang("B002", "Smartphone", 60, "Elektronik"),
+            new Barang("B003", "Kulkas", 20, "Elektronik")
+        };
+        foreach (var def in defaultItems)
+        {
+            if (!daftarBarang.Any(b => b.KodeBarang == def.KodeBarang)) daftarBarang.Add(def);
+        }
+
+        // 3) Input barang baru (via helper)
+        Console.WriteLine("--- Tambah Barang Baru (Refactored Input) ---");
+        try
+        {
+            Barang bInput = InputHelper.AmbilInputBarang();
+            // Jika kode sudah ada, replace/update; jika belum, tambahkan
+            var existing = daftarBarang.FirstOrDefault(b => b.KodeBarang == bInput.KodeBarang);
+            if (existing != null)
+            {
+                existing.NamaBarang = bInput.NamaBarang;
+                existing.JumlahStok = bInput.JumlahStok;
+                existing.Kategori = bInput.Kategori;
+                Console.WriteLine($"Barang dengan kode {existing.KodeBarang} diperbarui.");
+            }
+            else
+            {
+                daftarBarang.Add(bInput);
+                Console.WriteLine("Barang berhasil ditambahkan ke daftar.");
+            }
+        }
+        catch (StokNegatifException ex)
+        {
+            Console.WriteLine($"ERROR: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"ERROR input: {ex.Message}");
+        }
+
+        // 4) Cetak barang terakhir yang ada
+        Console.WriteLine("\n--- Cetak Info Barang Terakhir (via Interface) ---");
+        IBarangPrinter pencetak = new PencetakBarang();
+        pencetak.Cetak(daftarBarang.LastOrDefault());
+
+        // 5) Buat barang via factory dan tambahkan / update
+        Console.WriteLine("\n--- Buat Barang Baru via Factory ---");
+        Barang barangDariFactory = BarangFactory.BuatBarang("Makanan");
+        var existingFactory = daftarBarang.FirstOrDefault(b => b.KodeBarang == barangDariFactory.KodeBarang);
+        if (existingFactory != null)
+        {
+            existingFactory.NamaBarang = barangDariFactory.NamaBarang;
+            existingFactory.JumlahStok = barangDariFactory.JumlahStok;
+            existingFactory.Kategori = barangDariFactory.Kategori;
+            Console.WriteLine($"Barang dari factory dengan kode {existingFactory.KodeBarang} diperbarui.");
+        }
+        else
+        {
+            daftarBarang.Add(barangDariFactory);
+            Console.WriteLine("Barang dari factory berhasil ditambahkan.");
+        }
+
+        pencetak.Cetak(barangDariFactory);
+
+        // 6) Tulis ulang seluruh daftar ke file (menimpa) — ini mencegah kehilangan data lama
+        try
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("Kode\tNama\tStok\tKategori");
+            foreach (var barang in daftarBarang)
+            {
+                sb.AppendLine($"{barang.KodeBarang}\t{barang.NamaBarang}\t{barang.JumlahStok}\t{barang.Kategori}");
+            }
+            File.WriteAllText(path, sb.ToString());
+            Console.WriteLine($"Data disimpan di: {path} (total {daftarBarang.Count} barang)");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Gagal simpan: {ex.Message}");
+        }
+
+        // 7) Tampilkan isi file
+        if (File.Exists(path))
+        {
+            try
+            {
+                var isi = File.ReadAllLines(path);
+                foreach (var baris in isi)
+                {
+                    Console.WriteLine(baris);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Gagal baca: {ex.Message}");
+            }
+        }
+        else
+        {
+            Console.WriteLine($"File {path} tidak ditemukan.");
+        }
+
+        Console.WriteLine("\n--- Selesai ---");
+    }
+}

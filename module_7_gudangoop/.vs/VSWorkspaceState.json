@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\module_3_gudangoop"
+    "\\module_3_gudangoop",
+    "\\module_3_gudangoop\\Factories"
   ],
-  "SelectedNode": "\\module_3_gudangoop\\Program.cs",
+  "SelectedNode": "\\module_3_gudangoop\\Factories\\BarangFactory.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -2,5 +2,9 @@ Kode	Nama	Stok	Kategori
 B001	Laptop	30	Elektronik
 B002	Smartphone	60	Elektronik
 B003	Kulkas	20	Elektronik
-009	Kopi Aceh	70	Minuman
+087	Asam Klorida	60	Bahan Kimia
 MAK001	Susu	50	Minuman
+002	Kopi Aceh	90	Minuman
+009	Kopi Arabica	59	Minuman
+METH09	Metamfetamin	70	Barang Berbahaya
+008	Nasi	9	Makanan
